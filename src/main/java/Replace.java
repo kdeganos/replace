@@ -16,6 +16,21 @@ public class Replace {
       model.put("template", "templates/input.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
+
+    get("/output", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/output.vtl");
+
+      Replace myReplace = new Replace();
+
+      String inputtedPhrase = request.queryParams("phrase");
+      String inputtedFind = request.queryParams("find");
+      String inputtedReplaceWith = request.queryParams("replaceWith");
+
+      String replacementResult = myReplace.findAndReplace(inputtedPhrase, inputtedFind, inputtedReplaceWith);
+      model.put("result", replacementResult);
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
   }
 
   public static String findAndReplace(String phrase, String find, String replace){
