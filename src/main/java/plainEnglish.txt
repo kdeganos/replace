@@ -1,0 +1,2 @@
+user enters a string, a word in that string, and what to replace that word with.
+string.replace("word", "other word");
