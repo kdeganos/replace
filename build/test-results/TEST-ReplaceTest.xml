@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ReplaceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-04-20T23:27:01" hostname="epicodus-62.local" time="0.002">
+  <properties/>
+  <testcase name="findAndReplace_replaceHelloWithGoodbyeCaseInsensitive_goodbyeWorld" classname="ReplaceTest" time="0.002"/>
+  <testcase name="findAndReplace_replaceCatwithDog_Doghedral" classname="ReplaceTest" time="0.0"/>
+  <testcase name="findAndReplace_replaceHelloWithGoodbye_goodbyeWorld" classname="ReplaceTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
