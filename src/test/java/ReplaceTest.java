@@ -2,8 +2,28 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import org.junit.*;
 import static org.junit.Assert.*;
+import org.fluentlenium.adapter.FluentTest;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
-public class ReplaceTest {
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class ReplaceTest extends FluentTest{
+  public WebDriver webDriver = new HtmlUnitDriver();
+
+  @Override
+  public WebDriver getDefaultDriver() {
+    return webDriver;
+  }
+
+  @ClassRule
+  public static ServerRule server = new ServerRule();
+
+  @Test
+  public void rootTest() {
+    goTo("http://localhost:4567/");
+    assertThat(pageSource()).contains("Type in a phrase here.");
+  }
 
   @Test
   public void findAndReplace_replaceHelloWithGoodbye_goodbyeWorld() {
